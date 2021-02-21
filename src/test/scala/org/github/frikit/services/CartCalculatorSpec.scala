@@ -13,10 +13,10 @@ class CartCalculatorSpec extends BaseSpec {
   private val emptyCartCost = emptyCart.copy(cartCost = CartCost(totalCost = 0d))
 
   private val cartWithOneItem = Cart(items = List(apple))
-  private val cartCostWithOneItem = emptyCart.copy(cartCost = CartCost(apple.price.price))
+  private val cartCostWithOneItem = cartWithOneItem.copy(cartCost = CartCost(apple.price.price))
 
   private val cartWithMultipleItems = Cart(items = List(apple, orange))
-  private val cartCostWithMultipleItems = emptyCart.copy(cartCost = CartCost(apple.price.price + orange.price.price))
+  private val cartCostWithMultipleItems = cartWithMultipleItems.copy(cartCost = CartCost(apple.price.price + orange.price.price))
 
   private val cartCalculator = new CartCalculator()
 

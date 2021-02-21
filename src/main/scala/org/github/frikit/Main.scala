@@ -26,7 +26,7 @@ object Main extends App {
   val cart = Cart(items = itemsInCart)
 
   val costCalculator = new CartCalculator()
-  val cartCost = costCalculator.costOfCart(items = cart)
+  val cartCost = costCalculator.costOfCart(cart = cart)
 
   val roundPrice = BigDecimal(cartCost.cartCost.totalCost).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
   println(s"Total cost is ${roundPrice}")

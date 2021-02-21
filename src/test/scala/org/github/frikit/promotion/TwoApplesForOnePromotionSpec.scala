@@ -25,7 +25,7 @@ class TwoApplesForOnePromotionSpec extends BaseSpec {
   private val applePromotion = new TwoApplesForOnePromotion()
   private val calculatorService = new CartCalculator()
 
-  "Cart Calculator" should "return same cart for empty cart" in {
+  "Apples promotion" should "return same cart for empty cart" in {
     val cart = calculatorService.costOfCart(emptyCart)
 
     applePromotion.applyPromotion(cart) should be(emptyCartCost)

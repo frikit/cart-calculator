@@ -13,8 +13,7 @@ class ThreeOrangesForTwoPromotion extends Promotion {
 
       if (pairs > 0) {
         val promotionReduction = priceOfAnOrange * pairs
-        val promotionReductionRound = BigDecimal(promotionReduction).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
-        val newCost = BigDecimal(cart.cartCost.totalCost - promotionReductionRound).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+        val newCost = BigDecimal(cart.cartCost.totalCost - promotionReduction).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
         cart.copy(cartCost = CartCost(newCost))
       } else {
         cart

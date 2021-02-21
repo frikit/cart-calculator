@@ -13,7 +13,8 @@ class TwoApplesForOnePromotion extends Promotion {
 
       if (pairs > 0) {
         val promotionReduction = priceOfAnApple * pairs
-        cart.copy(cartCost = CartCost(cart.cartCost.totalCost - promotionReduction))
+        val newCost = BigDecimal(cart.cartCost.totalCost - promotionReduction).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+        cart.copy(cartCost = CartCost(newCost))
       } else {
         cart
       }
